@@ -51,9 +51,16 @@ public class Main {
             System.out.println("File could not be saved");
         }
         //4
-
+        String mostScoresTotal = MostScoresTotalThreaded.generate(scores);
+        if(WriteToFile.save("MostScoresTotal.txt",playersWithWrongScore)){
+            System.out.println("MostScoresTotal.txt has been successfully saved");
+        }else{
+            System.out.println("File could not be saved");
+        }
 
         }catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }catch (InterruptedException e){
             System.out.println(e.getMessage());
         }
     }
